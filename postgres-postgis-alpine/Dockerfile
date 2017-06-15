@@ -1,4 +1,4 @@
-FROM jqestate/postgres-alpine
+FROM jqestateru/postgres-alpine:v9.6
 MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
 USER root

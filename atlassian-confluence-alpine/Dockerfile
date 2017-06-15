@@ -1,8 +1,8 @@
-FROM lwieske/java-8:jdk-8u121-slim
+FROM anapsix/alpine-java:8_server-jre_unlimited
 MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
 ENV APP /confluence
-ENV VERSION 6.0.2
+ENV VERSION 6.1.3
 ENV CONFLUENCE_HOME /data
 ENV PORT 8090
 

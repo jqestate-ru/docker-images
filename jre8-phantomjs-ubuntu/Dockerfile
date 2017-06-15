@@ -1,4 +1,4 @@
-FROM jqestate/phantomjs-ubuntu
+FROM jqestateru/phantomjs-ubuntu
 MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
 ENV APP /app

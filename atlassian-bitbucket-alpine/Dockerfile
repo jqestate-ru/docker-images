@@ -1,8 +1,8 @@
-FROM lwieske/java-8:jdk-8u121-slim
+FROM anapsix/alpine-java:8_server-jre_unlimited
 MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
 ENV APP /bitbucket
-ENV VERSION 4.11.2
+ENV VERSION 5.1.0
 ENV BITBUCKET_HOME /data
 ENV PORT 7990
 ENV GIT_PORT 7999

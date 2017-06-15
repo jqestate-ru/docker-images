@@ -1,4 +1,4 @@
-FROM jqestate/jre8-alpine
+FROM jqestateru/jre8-alpine
 MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
 RUN apk add --update --no-cache imagemagick alpine-sdk jpeg-dev && \

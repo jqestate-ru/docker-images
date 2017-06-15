@@ -1,8 +1,8 @@
-FROM alpine:3.4
+FROM alpine:3.6
 
 MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
-ENV NGINX_VERSION 1.11.6
+ENV NGINX_VERSION 1.13.1
 
 RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
   && CONFIG="\
@@ -22,6 +22,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     --user=nginx \
     --group=nginx \
     --add-module=/usr/local/nginx-upstream-dynamic-servers \
+    --add-module=/usr/local/nginx-module-vts \
     --with-http_ssl_module \
     --with-http_realip_module \
     --with-http_addition_module \
@@ -75,6 +76,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
   && rm -r "$GNUPGHOME" nginx.tar.gz.asc \
   && mkdir -p /usr/src \
   && git clone https://github.com/GUI/nginx-upstream-dynamic-servers.git /usr/local/nginx-upstream-dynamic-servers \
+  && git clone git://github.com/vozlt/nginx-module-vts.git /usr/local/nginx-module-vts \
   && tar -zxC /usr/src -f nginx.tar.gz \
   && rm nginx.tar.gz \
   && cd /usr/src/nginx-$NGINX_VERSION \
