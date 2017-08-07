@@ -1,7 +1,7 @@
 FROM anapsix/alpine-java:8_server-jre_unlimited
 MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
-ENV VERSION 5.4.0
+ENV VERSION 5.5.0
 ENV NUMBER_OF_MASTERS 1
 
 RUN apk add --update --no-cache bash curl ca-certificates && \

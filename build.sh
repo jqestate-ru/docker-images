@@ -6,12 +6,12 @@ ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ORG=jqestateru
 
 function build {
-  docker build ${BUILD_OPTS} --force-rm -t $ORG/$1 ${ROOT}/$1
+  docker build ${BUILD_OPTS} --force-rm --no-cache=true -t $ORG/$1 ${ROOT}/$1
   docker push $ORG/$1
 }
 
 time build "jre8-alpine"
-time build "jre8-imagemagick-alpine"
+time build "jre8-vips-alpine"
 time build "duplicity-alpine"
 time build "elasticsearch-alpine"
 time build "nodejs-alpine"
