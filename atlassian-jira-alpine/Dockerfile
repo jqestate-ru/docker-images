@@ -2,7 +2,7 @@ FROM anapsix/alpine-java:8_server-jre_unlimited
 MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
 ENV APP /jira
-ENV VERSION 7.3.6
+ENV VERSION 7.4.4
 ENV JIRA_HOME /data
 ENV PORT 8080
 

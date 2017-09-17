@@ -3,11 +3,11 @@ MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
 ENV PROJECT /home/npm/project
 
-RUN apk add --update --no-cache -X https://dl-3.alpinelinux.org/alpine/edge/community bash nodejs-current-dev nodejs-current nodejs-current-npm build-base && \
+RUN apk add --update --no-cache -X https://dl-3.alpinelinux.org/alpine/edge/community bash nodejs-current-dev nodejs-current nodejs-current-npm build-base ca-certificates openssl && \
+    update-ca-certificates && \
     wget https://yarnpkg.com/latest.tar.gz -O /tmp/yarn.tgz && \
-    tar -zvxf /tmp/yarn.tgz && \
-    mkdir /opt && \
-    mv /dist /opt/yarn && \
+    mkdir -p /opt/yarn && \
+    tar -zvxf /tmp/yarn.tgz --strip 1 -C /opt/yarn && \
     ln -snf /opt/yarn/bin/yarn /usr/bin/yarn && \
     rm -rf /var/cache/apk/* && \
     adduser -D -g '' npm && \

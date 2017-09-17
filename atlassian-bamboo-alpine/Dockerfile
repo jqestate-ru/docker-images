@@ -2,7 +2,7 @@ FROM anapsix/alpine-java:8_server-jre_unlimited
 MAINTAINER Timothy Klim <jqestate@timothyklim.com>
 
 ENV APP /bamboo
-ENV VERSION 6.0.3
+ENV VERSION 6.1.1
 ENV BAMBOO_HOME /data
 ENV PORT 8085
 
